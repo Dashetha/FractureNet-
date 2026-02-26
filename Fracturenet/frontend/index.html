@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FractureNet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="logo-text">AI Medical Imaging Helper</div>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="#" class="nav-link active" data-page="dashboard">Dashboard</a>
+                <a href="#" class="nav-link" data-page="upload">Upload Scan</a>
+                <a href="#" class="nav-link" data-page="analysis">AI Analysis</a>
+                <a href="#" class="nav-link" data-page="reports">Reports</a>
+                <a href="#" class="nav-link" data-page="admin">Admin</a>
+            </nav>
+            
+            <div class="user-profile">
+                <div class="avatar">DR</div>
+                <div class="user-info">
+                    <div class="user-name">Dr. Sarah Johnson</div>
+                    <div class="user-role">Radiologist</div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Dashboard Layout -->
+        <div class="dashboard-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <a href="#" class="sidebar-item active" data-page="dashboard">
+                    <i class="fas fa-tachometer-alt sidebar-icon"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="sidebar-item" data-page="upload">
+                    <i class="fas fa-cloud-upload-alt sidebar-icon"></i>
+                    <span>Upload Scan</span>
+                </a>
+                <a href="#" class="sidebar-item" data-page="patients">
+                    <i class="fas fa-user-injured sidebar-icon"></i>
+                    <span>Patients</span>
+                </a>
+                <a href="#" class="sidebar-item" data-page="analysis">
+                    <i class="fas fa-search-plus sidebar-icon"></i>
+                    <span>AI Analysis</span>
+                </a>
+                <a href="#" class="sidebar-item" data-page="reports">
+                    <i class="fas fa-file-medical-alt sidebar-icon"></i>
+                    <span>Reports</span>
+                </a>
+                <a href="#" class="sidebar-item" data-page="settings">
+                    <i class="fas fa-cog sidebar-icon"></i>
+                    <span>Settings</span>
+                </a>
+            </aside>
+            
+            <!-- Main Content Area - Pages -->
+            <main class="main-content">
+                <!-- Dashboard Page -->
+                <div class="page active" id="dashboard-page">
+                    <h1 class="page-title">Dashboard Overview</h1>
+                    
+                    <!-- Stats Cards -->
+                    <div class="stats-container">
+                        <div class="card stat-card fade-in">
+                            <div class="stat-icon scans">
+                                <i class="fas fa-x-ray"></i>
+                            </div>
+                            <div class="stat-data">
+                                <h3>1,247</h3>
+                                <p>Total Scans Analyzed</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card stat-card fade-in" style="animation-delay: 0.1s;">
+                            <div class="stat-icon reviews">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <div class="stat-data">
+                                <h3>18</h3>
+                                <p>Pending Reviews</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card stat-card fade-in" style="animation-delay: 0.2s;">
+                            <div class="stat-icon risk">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="stat-data">
+                                <h3>7</h3>
+                                <p>High-Risk Detections</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Chart Section -->
+                    <div class="card chart-container fade-in" style="animation-delay: 0.3s;">
+                        <div class="card-title">
+                            <i class="fas fa-chart-line"></i>
+                            Scan Analysis Trends
+                        </div>
+                        <div class="chart-placeholder">
+                            <div class="chart-grid"></div>
+                            <div class="chart-line"></div>
+                            <div class="chart-point" style="left: 10%;"></div>
+                            <div class="chart-point" style="left: 30%;"></div>
+                            <div class="chart-point" style="left: 50%;"></div>
+                            <div class="chart-point" style="left: 70%;"></div>
+                            <div class="chart-point" style="left: 90%;"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent Scans Table -->
+                    <div class="card fade-in" style="animation-delay: 0.4s;">
+                        <div class="card-title">
+                            <i class="fas fa-history"></i>
+                            Recent Scans
+                        </div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Patient ID</th>
+                                        <th>Scan Type</th>
+                                        <th>Date</th>
+                                        <th>AI Findings</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#P-48291</td>
+                                        <td>Chest X-ray</td>
+                                        <td>2023-10-15</td>
+                                        <td>Pneumonia detected</td>
+                                        <td><span class="status-badge status-completed">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#P-48290</td>
+                                        <td>Brain MRI</td>
+                                        <td>2023-10-14</td>
+                                        <td>No abnormalities</td>
+                                        <td><span class="status-badge status-completed">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#P-48289</td>
+                                        <td>CT Scan</td>
+                                        <td>2023-10-14</td>
+                                        <td>Possible fracture</td>
+                                        <td><span class="status-badge status-pending">Pending Review</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#P-48288</td>
+                                        <td>X-ray (Knee)</td>
+                                        <td>2023-10-13</td>
+                                        <td>Analyzing...</td>
+                                        <td><span class="status-badge status-processing">Processing</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Upload Scan Page -->
+                <div class="page" id="upload-page">
+                    <h1 class="page-title">Upload Medical Scan</h1>
+                    
+                    <div class="card">
+                        <div class="card-title">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            Drag & Drop Scan Upload
+                        </div>
+                        
+                        <div class="upload-container" id="uploadZone">
+                            <div class="upload-icon">
+                                <i class="fas fa-file-medical"></i>
+                            </div>
+                            <div class="upload-text">Upload X-ray, CT, or MRI scans</div>
+                            <div class="upload-subtext">Drag and drop your medical image files here or click to browse</div>
+                            
+                            <div class="file-types">
+                                <div class="file-type">X-ray (.dcm, .png, .jpg)</div>
+                                <div class="file-type">CT Scan (.dcm, .nii)</div>
+                                <div class="file-type">MRI (.dcm, .nii)</div>
+                            </div>
+                            
+                            <button class="btn btn-primary" id="browseFiles">
+                                <i class="fas fa-folder-open"></i> Browse Files
+                            </button>
+                        </div>
+                        
+                        <div id="uploadProgress" style="display: none; margin-top: 30px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span>Uploading scan...</span>
+                                <span id="progressPercent">0%</span>
+                            </div>
+                            <div style="height: 8px; background-color: var(--bg-card-light); border-radius: 4px; overflow: hidden;">
+                                <div id="progressBar" style="height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent-blue), var(--accent-teal)); transition: width 0.3s;"></div>
+                            </div>
+                        </div>
+                        
+                        <div id="aiProcessing" style="display: none; margin-top: 40px; text-align: center;">
+                            <div style="font-size: 20px; margin-bottom: 20px; color: var(--accent-blue);">
+                                <i class="fas fa-brain"></i> AI Processing Scan...
+                            </div>
+                            <div class="skeleton" style="height: 200px; border-radius: 12px; margin-bottom: 20px;"></div>
+                            <p style="color: var(--text-secondary);">AI model is analyzing the scan for abnormalities. This may take a few seconds.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI Analysis Page -->
+                <div class="page" id="analysis-page">
+                    <h1 class="page-title">AI Analysis Results</h1>
+                    
+                    <div class="analysis-container">
+                        <!-- Image Viewer -->
+                        <div class="card">
+                            <div class="card-title">
+                                <i class="fas fa-image"></i>
+                                Chest X-ray Analysis
+                                <div class="heatmap-toggle-container">
+                                    <span class="heatmap-label">Heatmap Overlay:</span>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="heatmapToggle" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="image-viewer">
+                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Chest X-ray" class="scan-image">
+                                <div class="heatmap-overlay active" id="heatmapOverlay"></div>
+                            </div>
+                            
+                            <div class="analysis-controls">
+                                <button class="btn btn-secondary" id="zoomOutBtn">
+                                    <i class="fas fa-compress-alt"></i> Zoom Out
+                                </button>
+                                <button class="btn btn-toggle active" id="heatmapBtn">
+                                    <i class="fas fa-fire"></i> Show Heatmap
+                                </button>
+                                <button class="btn btn-secondary" id="exportBtn">
+                                    <i class="fas fa-download"></i> Export
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Confidence Meter & AI Notes -->
+                        <div class="card confidence-meter">
+                            <div class="card-title" style="justify-content: center;">
+                                <i class="fas fa-robot"></i>
+                                AI Confidence Score
+                            </div>
+                            
+                            <div class="confidence-circle">
+                                <div class="confidence-inner">
+                                    <div class="confidence-value">85%</div>
+                                    <div class="confidence-label">Probability</div>
+                                </div>
+                            </div>
+                            
+                            <div class="confidence-details">
+                                <h3>Pneumonia Detected</h3>
+                                <p>Based on Grad-CAM analysis of the chest X-ray</p>
+                            </div>
+                            
+                            <div class="ai-notes">
+                                <h4><i class="fas fa-lightbulb"></i> AI Findings</h4>
+                                <p>The AI model has identified a consolidation in the lower left lung lobe with 85% confidence. This finding is consistent with bacterial pneumonia. Recommend follow-up with CT scan for detailed analysis.</p>
+                            </div>
+                            
+                            <div class="confidence-actions">
+                                <button class="btn btn-primary" id="acceptFindingBtn">
+                                    <i class="fas fa-check-circle"></i> Accept Finding
+                                </button>
+                                <button class="btn btn-secondary" id="modifyReportBtn">
+                                    <i class="fas fa-edit"></i> Modify Report
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Analysis Details -->
+                    <div class="card" style="margin-top: 30px;">
+                        <div class="card-title">
+                            <i class="fas fa-stethoscope"></i>
+                            Detailed Analysis
+                        </div>
+                        <div class="analysis-details-grid">
+                            <div class="analysis-detail">
+                                <h4>Affected Area</h4>
+                                <p>Left lower lobe (LLL) - Approximately 4.2cm x 3.8cm area</p>
+                            </div>
+                            <div class="analysis-detail">
+                                <h4>Severity Index</h4>
+                                <p>Moderate (Score: 6.2/10)</p>
+                            </div>
+                            <div class="analysis-detail">
+                                <h4>Recommendations</h4>
+                                <p>Antibiotic therapy, Follow-up X-ray in 7 days</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Reports Page -->
+                <div class="page" id="reports-page">
+                    <h1 class="page-title">Medical Reports</h1>
+                    
+                    <div class="card">
+                        <div class="card-title">
+                            <i class="fas fa-file-medical-alt"></i>
+                            Patient: John Doe | Scan: Chest X-ray | Date: 2023-10-15
+                        </div>
+                        
+                        <div class="report-content">
+                            <div class="report-section">
+                                <h3>Findings</h3>
+                                <div class="findings-box">
+                                    <p>1. Consolidation in the left lower lung lobe measuring approximately 4.2 x 3.8 cm.</p>
+                                    <p>2. Air bronchograms visible within the consolidated area.</p>
+                                    <p>3. No pleural effusion or pneumothorax identified.</p>
+                                    <p>4. Cardiac silhouette and mediastinum are within normal limits.</p>
+                                </div>
+                                
+                                <h3>Radiologist Notes</h3>
+                                <textarea class="notes-textarea" placeholder="Add your notes here...">Findings consistent with community-acquired pneumonia. Recommended treatment with amoxicillin-clavulanate for 7 days. Follow-up chest X-ray advised in 1 week to monitor resolution.</textarea>
+                            </div>
+                            
+                            <div class="report-sidebar">
+                                <div class="report-info-card">
+                                    <h4>AI Confidence Scores</h4>
+                                    <div class="confidence-item">
+                                        <span>Pneumonia</span>
+                                        <span class="confidence-score">85%</span>
+                                    </div>
+                                    <div class="confidence-item">
+                                        <span>Normal</span>
+                                        <span class="confidence-score">12%</span>
+                                    </div>
+                                    <div class="confidence-item">
+                                        <span>Other</span>
+                                        <span class="confidence-score">3%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="report-actions">
+                                    <button class="btn btn-primary" id="downloadPdfBtn">
+                                        <i class="fas fa-file-pdf"></i> Download PDF
+                                    </button>
+                                    <button class="btn btn-secondary" id="finalizeReportBtn">
+                                        <i class="fas fa-check-double"></i> Approve & Finalize
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Admin Page -->
+                <div class="page" id="admin-page">
+                    <h1 class="page-title">Admin / Radiologist Dashboard</h1>
+                    
+                    <div class="card">
+                        <div class="card-title">
+                            <i class="fas fa-user-md"></i>
+                            Patient Timeline & Scan Comparison
+                        </div>
+                        
+                        <div class="patient-timeline">
+                            <div class="timeline-header">
+                                <h3>Patient: Michael Chen</h3>
+                                <p>ID: #P-48291 | Age: 42 | Last Visit: 2023-10-15</p>
+                            </div>
+                            
+                            <div class="timeline-items">
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2023-10-15</div>
+                                    <div class="timeline-content">
+                                        <h4>Chest X-ray</h4>
+                                        <p>Pneumonia detected in left lower lobe. AI confidence: 85%</p>
+                                        <span class="status-badge status-completed">Reviewed</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2023-08-22</div>
+                                    <div class="timeline-content">
+                                        <h4>Abdominal CT</h4>
+                                        <p>No abnormalities detected. AI confidence: 94%</p>
+                                        <span class="status-badge status-completed">Reviewed</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2023-05-10</div>
+                                    <div class="timeline-content">
+                                        <h4>Chest X-ray</h4>
+                                        <p>Clear lungs, no signs of infection</p>
+                                        <span class="status-badge status-completed">Reviewed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="scan-comparison">
+                            <h3 style="margin-bottom: 20px;">Scan Comparison (Before vs After Treatment)</h3>
+                            <div class="comparison-container">
+                                <div class="comparison-scan">
+                                    <div class="scan-label">Before (2023-10-15)</div>
+                                    <div class="scan-placeholder">
+                                        <i class="fas fa-lungs" style="font-size: 50px; color: var(--accent-red);"></i>
+                                        <p>Consolidation visible</p>
+                                    </div>
+                                </div>
+                                <div class="comparison-vs">
+                                    <div class="vs-circle">VS</div>
+                                </div>
+                                <div class="comparison-scan">
+                                    <div class="scan-label">After (2023-10-22)</div>
+                                    <div class="scan-placeholder">
+                                        <i class="fas fa-lungs" style="font-size: 50px; color: var(--accent-green);"></i>
+                                        <p>Clear improvement</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card" style="margin-top: 30px;">
+                        <div class="card-title">
+                            <i class="fas fa-edit"></i>
+                            Editable AI Findings
+                        </div>
+                        
+                        <div class="editable-findings">
+                            <div class="finding-item">
+                                <div class="finding-header">
+                                    <h4>Primary Finding: Pneumonia</h4>
+                                    <span class="confidence-badge">85% confidence</span>
+                                </div>
+                                <div class="finding-actions">
+                                    <button class="btn btn-secondary btn-sm">
+                                        <i class="fas fa-edit"></i> Edit
+                                    </button>
+                                    <button class="btn btn-secondary btn-sm">
+                                        <i class="fas fa-check"></i> Confirm
+                                    </button>
+                                    <button class="btn btn-secondary btn-sm">
+                                        <i class="fas fa-times"></i> Reject
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="finding-item">
+                                <div class="finding-header">
+                                    <h4>Secondary Finding: Mild Pleural Thickening</h4>
+                                    <span class="confidence-badge">42% confidence</span>
+                                </div>
+                                <div class="finding-actions">
+                                    <button class="btn btn-secondary btn-sm">
+                                        <i class="fas fa-edit"></i> Edit
+                                    </button>
+                                    <button class="btn btn-secondary btn-sm">
+                                        <i class="fas fa-check"></i> Confirm
+                                    </button>
+                                    <button class="btn btn-secondary btn-sm">
+                                        <i class="fas fa-times"></i> Reject
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
